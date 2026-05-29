@@ -1,72 +1,159 @@
 <template>
-  <div class="about-page">
-    <div class="container">
-      <h1>About the Journey</h1>
-      <p class="lead">
-        Rwanda is a vibrant country filled with warm hospitality, breathtaking landscapes, and incredible biodiversity.
-      </p>
-      
-      <div class="content-block">
-        <h2>Our Mission</h2>
-        <p>
-          The <strong>Tembera Urwanda</strong> initiative invites both locals and international travelers to explore the hidden gems of our beautiful nation. From the canopy walks of Nyungwe Forest to the bustling, clean streets of Kigali, we champion sustainable eco-tourism that protects our wildlife and empowers our communities.
-        </p>
-      </div>
+  <div class="home-page">
 
-      <div class="stats-box">
-        <h3>Quick Facts</h3>
-        <ul>
-          <li><strong>Known As:</strong> The Land of a Thousand Hills (Isugi y'Abanyarwanda)</li>
-          <li><strong>Capital:</strong> Kigali (Celebrated as one of Africa's cleanest and safest cities)</li>
-          <li><strong>Languages:</strong> Kinyarwanda, English, French, and Swahili</li>
-        </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="overlay">
+        <h1>Tembera Urwanda</h1>
+        <p class="subtitle">Discover the Land of a Thousand Hills</p>
+        <button @click="bookTrip" class="cta-btn">
+          Start Your Journey
+        </button>
       </div>
-    </div>
+    </section>
+
+    <!-- Destinations -->
+    <section class="destinations">
+      <h2>Experience Rwanda</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>🦍 Volcanoes National Park</h3>
+          <p>
+            Home to the majestic mountain gorillas and dramatic volcanic peaks.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🦁 Akagera National Park</h3>
+          <p>
+            Experience a classic African safari with the Big Five roaming free.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🌊 Lake Kivu</h3>
+          <p>
+            Relax by the beautiful emerald-green waters and rolling hills.
+          </p>
+        </div>
+      </div>
+    </section>
+
   </div>
 </template>
 
+<script setup>
+const bookTrip = () => {
+  alert("Murakaza neza! Thank you for planning your visit to Rwanda.");
+};
+</script>
+
 <style scoped>
-.about-page {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  padding: 60px 20px;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+
+.home-page{
+  font-family: Arial, Helvetica, sans-serif;
 }
-h1 {
-  color: #008751;
+
+/* HERO SECTION */
+.hero{
+  height: 100vh;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("src/assets/images/tembera.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+.overlay{
+  padding: 20px;
+}
+
+.hero h1{
+  font-size: 4rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px black;
+}
+
+.subtitle{
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.cta-btn{
+  padding: 14px 35px;
+  border: none;
+  border-radius: 30px;
+  background: #008751;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover{
+  background: #e5b800;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* DESTINATIONS */
+.destinations{
+  padding: 70px 20px;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+.destinations h2{
   font-size: 2.5rem;
-  border-bottom: 3px solid #e5b800;
-  padding-bottom: 10px;
-}
-.lead {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #555;
   margin-bottom: 40px;
-}
-.content-block h2 {
   color: #0066b2;
 }
-.stats-box {
-  background-color: #edf7f2;
-  border-left: 5px solid #008751;
-  padding: 20px;
-  margin-top: 40px;
-  border-radius: 0 8px 8px 0;
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
 }
-.stats-box h3 {
-  margin-top: 0;
+
+.card{
+  background: white;
+  width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.card:hover{
+  transform: translateY(-8px);
+}
+
+.card h3{
+  margin-bottom: 15px;
   color: #008751;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.card p{
+  color: #555;
+  line-height: 1.6;
 }
-li {
-  margin-bottom: 10px;
-}
+
 </style>
