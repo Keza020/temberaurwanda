@@ -62,7 +62,6 @@ const routes = [
   { path: '/western',        
     name: 'western',
     component: Western     
-
   }
 ]
 
